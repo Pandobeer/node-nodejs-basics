@@ -1,5 +1,8 @@
+import { createHash } from 'node:crypto';
+
 const calculateHash = async () => {
-    // Write your code here 
+    const hex = createHash('sha256').update('fileToCalculateHasFor.txt').digest('hex');
+    console.log(hex);
 };
 
 await calculateHash();
